@@ -1437,6 +1437,66 @@ h3 {
     background: #fff;
 }
 
+/* Video cover beside a record (speeches). Framed like .framed images. */
+.entry-list__thumb {
+    position: relative;
+    display: block;
+    width: 14rem;
+    max-width: calc(100% - 0.75rem);
+    margin: 0 0.75rem 2rem 0;
+}
+
+.entry-list__thumb::before {
+    content: "";
+    position: absolute;
+    inset: 0.75rem -0.75rem -0.75rem 0.75rem;
+    border: 1px solid var(--bronze);
+    opacity: 0.55;
+}
+
+.entry-list__thumb img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+}
+
+.entry-list__play {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    background: var(--navy);
+    color: #fff;
+    font-size: 1.35rem;
+    transition: background-color 0.2s ease;
+}
+
+.entry-list__thumb:hover .entry-list__play {
+    background: var(--bronze);
+}
+
+@media (min-width: 992px) {
+    /* The list sits in a col-lg-7 offset-lg-1 column: hang the cover in the
+       col-lg-4 column to its left, right-aligned against the gap. */
+    .entry-list__item--thumb {
+        position: relative;
+        min-height: 23.5rem;
+    }
+
+    .entry-list__item--thumb .entry-list__thumb {
+        position: absolute;
+        top: 1.75rem;
+        right: calc(100% + (100% + 1.5rem) / 7 + 1.5rem + 0.75rem);
+        margin: 0;
+    }
+}
+
 .entry-list__item > :last-child {
     margin-bottom: 0;
 }
