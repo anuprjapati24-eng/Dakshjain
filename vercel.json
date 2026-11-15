@@ -1,0 +1,15 @@
+{
+  "functions": {
+    "api/index.php": {
+      "runtime": "vercel-php@0.7.4",
+      "includeFiles": "{*.php,includes/**,content/**,assets/images/gallery/**}"
+    }
+  },
+  "routes": [
+    { "src": "/(includes|content)(/.*)?", "status": 404 },
+    { "src": "/assets/images/daksh-real-images(/.*)?", "status": 404 },
+    { "src": "/(README\\.md|vercel\\.json|\\..*)", "status": 404 },
+    { "src": "/(robots\\.txt|sitemap\\.xml|[a-z0-9-]+\\.php)?", "dest": "/api/index.php?__page=$1" },
+    { "handle": "filesystem" }
+  ]
+}
