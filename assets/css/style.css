@@ -1858,7 +1858,19 @@ a.speech-cover:hover .speech-cover__play,
     }
 }
 
-/* One or two cards: lay each card out horizontally so the row is filled */
+/* One or two cards: lay each card out horizontally so the row is filled.
+   The cover stretches to the card's height when the text runs taller. */
+.speech-grid--count-1 .speech-cover,
+.speech-grid--count-2 .speech-cover {
+    display: flex;
+    flex-direction: column;
+}
+
+.speech-grid--count-1 .speech-cover__media,
+.speech-grid--count-2 .speech-cover__media {
+    flex: 1 0 auto;
+}
+
 @media (min-width: 768px) {
     .speech-grid--count-1 {
         grid-template-columns: minmax(0, 1fr);
