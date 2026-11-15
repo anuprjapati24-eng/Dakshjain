@@ -105,6 +105,25 @@ function load_content(string $name): array
     return require __DIR__ . '/../content/' . $name . '.php';
 }
 
+/**
+ * Link and cover image of a content record: [url, is_external, thumb].
+ * The url accepts web addresses and local paths only; the thumb must be a
+ * .jpg under assets/images/. Either is '' when missing or not acceptable.
+ */
+function entry_media(array $entry): array
+{
+    $url = $entry['url'] ?? '';
+    $external = preg_match('#^https?://#i', $url) === 1;
+    if (!$external && strpos($url, ':') !== false) {
+        $url = '';
+    }
+    $thumb = $entry['thumb'] ?? '';
+    if (!preg_match('#^assets/images/[a-z0-9/_-]+\.jpg$#', $thumb)) {
+        $thumb = '';
+    }
+    return [$url, $external, $thumb];
+}
+
 /** Records belonging to one category. */
 function in_category(array $entries, string $category): array
 {

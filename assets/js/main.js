@@ -182,10 +182,12 @@
         update();
     });
 
-    /* Category filter for listings (articles) */
+    /* Category filter for listings (articles, speeches) */
     document.querySelectorAll('[data-filter]').forEach(function (filter) {
         var bar = filter.querySelector('[data-filter-bar]');
         if (!bar) { return; }
+
+        var noun = filter.getAttribute('data-filter-noun') || 'article';
 
         var buttons = bar.querySelectorAll('[data-filter-value]');
         var items = filter.querySelectorAll('[data-category]');
@@ -213,7 +215,7 @@
 
             if (empty) { empty.hidden = shown > 0; }
             if (status) {
-                status.textContent = shown + (shown === 1 ? ' article shown' : ' articles shown') +
+                status.textContent = shown + ' ' + noun + (shown === 1 ? '' : 's') + ' shown' +
                     (value === '' ? '.' : ' under ' + value + '.');
             }
         });

@@ -5,10 +5,7 @@ defined('SITE_ROOT') || exit;
  * Expects $entries; optional $entry_label (default link text) and
  * $entry_heading (heading element, default 'h3').
  * Only fields present on a record are shown; see the files in content/.
- * An optional 'image' (a .jpg under assets/images/) is shown above the record.
- * An optional 'thumb' (a 3:4 .jpg under assets/images/, e.g. a video cover) is
- * shown in the left column beside the record on wide screens, above it otherwise.
- */
+ * An optional 'image' (a .jpg under assets/images/) is shown above the record. */
 $entry_label   = $entry_label   ?? 'View';
 $entry_heading = $entry_heading ?? 'h3';
 ?>
@@ -23,14 +20,7 @@ $entry_heading = $entry_heading ?? 'h3';
             $entry_url = '';
         }
         ?>
-        <?php $entry_thumb = !empty($entry['thumb']) && preg_match('#^assets/images/[a-z0-9/_-]+\.jpg$#', $entry['thumb']) ? $entry['thumb'] : ''; ?>
-        <li class="entry-list__item<?= $entry_thumb !== '' ? ' entry-list__item--thumb' : '' ?>" data-category="<?= e($entry['category'] ?? '') ?>">
-            <?php if ($entry_thumb !== ''): ?>
-                <a class="entry-list__thumb" href="<?= e($entry_url !== '' ? $entry_url : $entry_thumb) ?>"<?= $entry_external ? ' rel="noopener"' : '' ?> tabindex="-1" aria-hidden="true">
-                    <img src="<?= e($entry_thumb) ?>" width="480" height="640" loading="lazy" alt="">
-                    <span class="entry-list__play"><i class="bi bi-play-fill"></i></span>
-                </a>
-            <?php endif; ?>
+        <li class="entry-list__item" data-category="<?= e($entry['category'] ?? '') ?>">
             <?php if (!empty($entry['image']) && preg_match('#^assets/images/[a-z0-9/_-]+\.jpg$#', $entry['image'])): ?>
                 <img class="entry-list__image" src="<?= e($entry['image']) ?>" loading="lazy" alt="<?= e($entry['image_alt'] ?? $entry['title']) ?>">
             <?php endif; ?>
