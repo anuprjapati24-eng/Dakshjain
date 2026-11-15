@@ -15,6 +15,18 @@
  */
 return [
     [
+        'title'      => 'Aerodrome Advisory Committee meeting, Surat International Airport',
+        'category'   => 'Public Events',
+        'date'       => '12 September 2025',
+        'event'      => 'High-Level Aerodrome Advisory Committee (AAC) Meeting',
+        'venue'      => 'Conference Hall, Terminal Building, Surat Airport',
+        'summary'    => 'Daksh Jain attended as a member nominated by the Ministry of Civil Aviation. The meeting, chaired by Shri C. R. Paatil, Cabinet Minister of Jal Shakti, discussed airport development, infrastructure, future expansion and passenger facilities.',
+        'url'        => 'https://www.instagram.com/reel/DRfSAANEh4W/',
+        'link_label' => 'Watch on Instagram',
+        'image'      => 'assets/images/reels/aac-surat-airport.jpg',
+        'image_alt'  => 'Video cover: the Airport Advisory Committee Meeting banner at Surat International Airport above the meeting table',
+    ],
+    [
         'title'      => 'Daksh Jain nominated as Member TAC in MoC, GOI',
         'category'   => 'News and Press Coverage',
         'date'       => '6 February 2021',
