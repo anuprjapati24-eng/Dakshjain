@@ -53,11 +53,13 @@ require __DIR__ . '/includes/page-hero.php';
             <div class="col-lg-4 reveal">
                 <p class="eyebrow">Profile</p>
                 <h2 class="section__title" id="profile-heading">Professional Profile</h2>
-                <?php
-                $carousel_images = [15, 2, 18, 76, 88];
-                $carousel_label  = 'Photographs of Daksh Jain';
-                require __DIR__ . '/includes/carousel.php';
-                ?>
+                <figure class="framed mt-4">
+                    <img src="assets/images/about-portrait-1200.jpg"
+                         srcset="assets/images/about-portrait-700.jpg 700w, assets/images/about-portrait-1200.jpg 1200w"
+                         sizes="(min-width: 992px) 360px, 92vw"
+                         width="1200" height="912"
+                         alt="Portrait of Daksh Jain in a grey blazer and tinted glasses">
+                </figure>
             </div>
             <div class="col-lg-7 offset-lg-1 prose reveal">
                 <p class="lead-text">Daksh’s interests lie in the relationship between law, public institutions, public policy and citizen welfare — how rules are made, how institutions apply them and what that means for people in practice.</p>

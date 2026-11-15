@@ -22,7 +22,7 @@ $social_focus = [
 $vision_pillars = ['Knowledge', 'Technology', 'Governance', 'Empathy', 'Integrity'];
 
 // Photographs shown in the About carousel (numbers in assets/images/gallery/).
-$featured_photos = [15, 2, 18, 76, 88];
+$featured_photos = [22, 2, 101, 15, 5];
 
 $person_schema = [
     '@context'    => 'https://schema.org',

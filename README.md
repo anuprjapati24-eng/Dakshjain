@@ -122,7 +122,7 @@ Colours, fonts, type scale and section spacing are CSS custom properties at the 
 
 `daksh-real-images/` holds the supplied original photographs, named `image-1.jpeg` to `image-101.jpeg`. `gallery/` holds a web-sized copy of each (`image-N.jpg`, longest side 800 px); these are what the site shows. `hero-daksh-jain-*` are cropped copies of `image-60.jpeg` used in the homepage hero. The section photographs are resized copies of supplied originals: `parliament-colonnade-*` (`image-79.jpeg`, homepage Public Service), `parliament-view-*` (`image-89.jpeg`, Parliament & Governance), `committee-meeting-*` (`image-10.jpeg`, homepage Policy & Research) and `seminar-room-*` (`image-97.jpeg`, Policy & Research page). `press/` holds newspaper clippings listed on the Media page through `content/media.php`.
 
-**Carousels.** `includes/carousel.php` shows gallery photos. The homepage About section and the About page show photos 15, 2, 18, 76 and 88, one at a time; the strip below Vision on the homepage shows every photo in `gallery/`. To add a photo, put the original in `daksh-real-images/` as the next number and a resized copy in `gallery/`:
+**Carousels.** `includes/carousel.php` shows gallery photos. The homepage About section shows photos 22, 2, 101, 15 and 5, one at a time (the About page shows `about-portrait-*`, a resized copy of a supplied portrait); the strip below Vision on the homepage shows every photo in `gallery/`. To add a photo, put the original in `daksh-real-images/` as the next number and a resized copy in `gallery/`:
 
 ```bash
 sips -Z 800 -s format jpeg -s formatOptions 68 assets/images/daksh-real-images/image-102.jpeg --out assets/images/gallery/image-102.jpg
