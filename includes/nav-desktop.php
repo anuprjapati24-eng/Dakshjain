@@ -17,7 +17,7 @@ $active = current_page();
                 </li>
             <?php else: ?>
                 <li class="nav-dropdown" data-dropdown>
-                    <button class="nav-desktop__link nav-dropdown__toggle<?= in_array($active, $entry['items'], true) ? ' is-active' : '' ?>"
+                    <button class="nav-desktop__link nav-dropdown__toggle<?= nav_group_active($entry['items']) ? ' is-active' : '' ?>"
                             type="button" aria-expanded="false" aria-controls="nav-group-<?= $i ?>">
                         <?= e($entry['label']) ?>
                         <i class="bi bi-chevron-down" aria-hidden="true"></i>

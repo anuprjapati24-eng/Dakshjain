@@ -80,16 +80,16 @@ require __DIR__ . '/includes/page-hero.php';
                 <p class="section__intro">Each item carries only confirmed details: its title, the occasion, and the date and venue where known.</p>
             </div>
             <div class="col-lg-7 offset-lg-1 reveal">
-                <ol class="speech-topics">
+                <ol class="topic-rows">
                     <?php $topic_number = 0; ?>
                     <?php foreach ($categories as $category_title => $category_text): ?>
                         <?php $topic_count = count(in_category($entries, $category_title)); ?>
                         <li>
-                            <span class="speech-topics__number" aria-hidden="true"><?= sprintf('%02d', ++$topic_number) ?></span>
+                            <span class="topic-rows__number" aria-hidden="true"><?= sprintf('%02d', ++$topic_number) ?></span>
                             <div>
-                                <h3 class="speech-topics__title"><?= e($category_title) ?></h3>
-                                <p class="speech-topics__text"><?= e($category_text) ?></p>
-                                <p class="speech-topics__count<?= $topic_count ? ' speech-topics__count--listed' : '' ?>">
+                                <h3 class="topic-rows__title"><?= e($category_title) ?></h3>
+                                <p class="topic-rows__text"><?= e($category_text) ?></p>
+                                <p class="topic-rows__count<?= $topic_count ? ' topic-rows__count--listed' : '' ?>">
                                     <?= $topic_count ? $topic_count . ($topic_count === 1 ? ' item listed' : ' items listed') : 'None listed yet' ?>
                                 </p>
                             </div>

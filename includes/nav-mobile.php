@@ -17,6 +17,7 @@ defined('SITE_ROOT') || exit;
         </div>
         <ul class="mobile-nav__list">
             <?php foreach ($pages as $nav_key => $nav_page): ?>
+                <?php if (!empty($nav_page['hidden'])) { continue; } ?>
                 <li>
                     <a href="<?= e(page_url($nav_key)) ?>"<?= current_attr($nav_key) ?>><?= e($nav_page['label']) ?></a>
                 </li>

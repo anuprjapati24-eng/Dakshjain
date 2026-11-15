@@ -9,6 +9,11 @@ $root = dirname(__DIR__);
 $page = $_GET['__page'] ?? '';
 unset($_GET['__page']);
 
+// Keep the visitor's own query string (e.g. article.php?slug=…) if the rewrite dropped it.
+parse_str((string) parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_QUERY), $original_query);
+unset($original_query['__page']);
+$_GET += $original_query;
+
 $aliases = ['' => 'index.php', 'robots.txt' => 'robots.php', 'sitemap.xml' => 'sitemap.php'];
 $file = $aliases[$page] ?? $page;
 

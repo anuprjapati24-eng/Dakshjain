@@ -3,12 +3,13 @@ defined('SITE_ROOT') || exit;
 /**
  * Document head and SEO metadata.
  * Optional variables set by the page before including header.php:
- *   $page_title, $page_description, $page_image, $page_noindex
+ *   $page_title, $page_description, $page_image, $page_noindex, $page_canonical
  */
 $current     = current_page();
 $title       = isset($page_title) ? $page_title . ' | ' . $site['name'] : $site['name'] . ' | ' . 'Law, Public Policy & Research';
 $description = $page_description ?? $site['description'];
-$canonical   = absolute_url($current === 'home' || $current === '' ? '' : $pages[$current]['file']);
+// A page with query-string variants (article.php?slug=…) sets $page_canonical itself.
+$canonical   = absolute_url($page_canonical ?? ($current === 'home' || $current === '' ? '' : $pages[$current]['file']));
 $image       = absolute_url($page_image ?? $site['og_image']);
 ?>
 <meta charset="utf-8">

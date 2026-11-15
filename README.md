@@ -51,7 +51,7 @@ assets/
 
 ## Common tasks
 
-**Add an article, speech, media item or project.** Add a record to the matching file in `content/`; the fields are described at the top of each file. Add verified items only. The page switches from its "none listed yet" notice to the listing by itself, and the Articles page shows its topic filter once there are two or more articles.
+**Add an article, speech, media item or project.** Add a record to the matching file in `content/`; the fields are described at the top of each file. Add verified items only. The page switches from its "none listed yet" notice to the listing by itself, and the Articles page shows its topic filter once there are two or more articles besides the featured one. The newest article (first in the file) is featured. An article with a `slug` and a `body` (its full text as blocks, described in `content/articles.php`) gets its own reading page at `article.php?slug=…` and is listed in the sitemap; one with only a `url` links to the published source. Article images are 16:10 `.jpg` files in `assets/images/articles/`, named `…-1200.jpg` with a `…-700.jpg` copy.
 
 **Add a new page.** Follow `about.php`:
 

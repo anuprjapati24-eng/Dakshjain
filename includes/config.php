@@ -72,6 +72,9 @@ $pages = [
     'media'             => ['label' => 'Media',                   'file' => 'media.php'],
     'projects'          => ['label' => 'Projects',                'file' => 'projects.php'],
     'contact'           => ['label' => 'Contact',                 'file' => 'contact.php'],
+    // Single article (article.php?slug=…). Not listed in navigation or the sitemap
+    // on its own; while it is open, the Articles link is marked as the current section.
+    'article'           => ['label' => 'Article',                 'file' => 'article.php', 'hidden' => true, 'parent' => 'articles'],
 ];
 
 /**
@@ -166,10 +169,53 @@ function current_page(): string
     return '';
 }
 
-/** aria-current attribute for the active navigation link. */
+/** aria-current attribute for the active navigation link (or the section of a hidden page). */
 function current_attr(string $key): string
 {
-    return $key === current_page() ? ' aria-current="page"' : '';
+    global $pages;
+    $current = current_page();
+    if ($key === $current) {
+        return ' aria-current="page"';
+    }
+    return $current !== '' && ($pages[$current]['parent'] ?? '') === $key ? ' aria-current="true"' : '';
+}
+
+/** Whether a nav group contains the current page or the parent of a hidden current page. */
+function nav_group_active(array $items): bool
+{
+    global $pages;
+    $current = current_page();
+    return in_array($current, $items, true) || in_array($pages[$current]['parent'] ?? '', $items, true);
+}
+
+/** Whether an article record has its full text on this site (article.php). */
+function article_has_page(array $entry): bool
+{
+    return !empty($entry['body']) && preg_match('/^[a-z0-9]+(-[a-z0-9]+)*$/', $entry['slug'] ?? '') === 1;
+}
+
+/** Link for an article: its page on this site, or else its published url. [url, is_external] */
+function article_link(array $entry): array
+{
+    if (article_has_page($entry)) {
+        return ['article.php?slug=' . $entry['slug'], false];
+    }
+    [$url, $external] = entry_media($entry);
+    return [$url, $external];
+}
+
+/**
+ * Image of an article: [large, small, alt]. The large file must be a …-1200.jpg
+ * under assets/images/articles/; small is its …-700.jpg copy, or '' if missing.
+ */
+function article_image(array $entry): array
+{
+    $large = $entry['image'] ?? '';
+    if (!preg_match('#^assets/images/articles/[a-z0-9-]+-1200\.jpg$#', $large) || !is_file(SITE_ROOT . '/' . $large)) {
+        return ['', '', ''];
+    }
+    $small = substr($large, 0, -strlen('1200.jpg')) . '700.jpg';
+    return [$large, is_file(SITE_ROOT . '/' . $small) ? $small : '', $entry['image_alt'] ?? ''];
 }
 
 /** Whether the request is addressed to a local development host. */
