@@ -22,7 +22,7 @@ $social_focus = [
 $vision_pillars = ['Knowledge', 'Technology', 'Governance', 'Empathy', 'Integrity'];
 
 // Photographs shown in the About carousel (numbers in assets/images/gallery/).
-$featured_photos = [1, 2, 3, 4, 5];
+$featured_photos = [15, 2, 18, 76, 88];
 
 $person_schema = [
     '@context'    => 'https://schema.org',
@@ -137,11 +137,11 @@ require __DIR__ . '/includes/header.php';
             </div>
             <div class="col-lg-5 offset-lg-1 reveal">
                 <figure class="framed framed--on-dark">
-                    <img src="assets/images/secretariat-reflection-1200.jpg"
-                         srcset="assets/images/secretariat-reflection-700.jpg 700w, assets/images/secretariat-reflection-1200.jpg 1200w"
+                    <img src="assets/images/parliament-colonnade-1080.jpg"
+                         srcset="assets/images/parliament-colonnade-700.jpg 700w, assets/images/parliament-colonnade-1080.jpg 1080w"
                          sizes="(min-width: 992px) 460px, 92vw"
-                         width="1200" height="800" loading="lazy"
-                         alt="Government buildings on Raisina Hill, New Delhi, reflected in a pool under a monsoon sky">
+                         width="1080" height="810" loading="lazy"
+                         alt="Daksh Jain standing in the curved sandstone colonnade of Parliament House, New Delhi">
                 </figure>
             </div>
         </div>
@@ -157,11 +157,11 @@ require __DIR__ . '/includes/header.php';
                 <h2 class="section__title" id="research-heading">Research That Serves Society</h2>
                 <p class="statement">Good governance begins with good research.</p>
                 <figure class="framed">
-                    <img src="assets/images/research-reading-room-1000.jpg"
-                         srcset="assets/images/research-reading-room-600.jpg 600w, assets/images/research-reading-room-1000.jpg 1000w"
+                    <img src="assets/images/committee-meeting-768.jpg"
+                         srcset="assets/images/committee-meeting-600.jpg 600w, assets/images/committee-meeting-768.jpg 768w"
                          sizes="(min-width: 992px) 460px, 92vw"
-                         width="1000" height="750" loading="lazy"
-                         alt="A reader working at a long desk in a library reading room">
+                         width="768" height="767" loading="lazy"
+                         alt="Daksh Jain seated with other members at a committee meeting table">
                 </figure>
             </div>
             <div class="col-lg-6 offset-lg-1 reveal">

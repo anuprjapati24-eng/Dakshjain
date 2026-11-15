@@ -54,7 +54,7 @@ require __DIR__ . '/includes/page-hero.php';
                 <p class="eyebrow">Profile</p>
                 <h2 class="section__title" id="profile-heading">Professional Profile</h2>
                 <?php
-                $carousel_images = [1, 2, 3, 4, 5];
+                $carousel_images = [15, 2, 18, 76, 88];
                 $carousel_label  = 'Photographs of Daksh Jain';
                 require __DIR__ . '/includes/carousel.php';
                 ?>

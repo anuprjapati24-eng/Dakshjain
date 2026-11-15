@@ -82,11 +82,11 @@ require __DIR__ . '/includes/page-hero.php';
                 <h2 class="section__title" id="excellence-heading">Governance and Operational Excellence</h2>
                 <p>Good policy depends on institutions that work well. Daksh is interested in the practical side of governance: how organisations run, coordinate and improve.</p>
                 <figure class="framed mt-5">
-                    <img src="assets/images/research-reading-room-1000.jpg"
-                         srcset="assets/images/research-reading-room-600.jpg 600w, assets/images/research-reading-room-1000.jpg 1000w"
+                    <img src="assets/images/seminar-room-1200.jpg"
+                         srcset="assets/images/seminar-room-700.jpg 700w, assets/images/seminar-room-1200.jpg 1200w"
                          sizes="(min-width: 992px) 460px, 92vw"
-                         width="1000" height="750" loading="lazy"
-                         alt="A reader working at a long desk in a library reading room">
+                         width="1200" height="900" loading="lazy"
+                         alt="Participants seated around a curved table in a seminar room during a presentation">
                 </figure>
             </div>
             <div class="col-lg-6 offset-lg-1 reveal">

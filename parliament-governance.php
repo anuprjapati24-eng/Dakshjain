@@ -81,12 +81,12 @@ require __DIR__ . '/includes/page-hero.php';
                 <h2 class="section__title" id="engagement-heading">Democratic Institutions and Public Engagement</h2>
                 <p>Democratic institutions work best when citizens can follow what they do and take part in an informed way.</p>
                 <figure class="framed framed--wide mt-5">
-                    <img src="assets/images/secretariat-reflection-1200.jpg"
-                         srcset="assets/images/secretariat-reflection-700.jpg 700w, assets/images/secretariat-reflection-1200.jpg 1200w"
+                    <img src="assets/images/parliament-view-960.jpg"
+                         srcset="assets/images/parliament-view-600.jpg 600w, assets/images/parliament-view-960.jpg 960w"
                          sizes="(min-width: 992px) 460px, 92vw"
-                         width="1200" height="800" loading="lazy"
-                         alt="Sandstone government buildings with a dome and tower, reflected in a pool under a monsoon sky">
-                    <figcaption>Government buildings on Raisina Hill, New Delhi</figcaption>
+                         width="960" height="720" loading="lazy"
+                         alt="Daksh Jain standing between sandstone columns, with the new Parliament building behind him">
+                    <figcaption>Parliament House, New Delhi</figcaption>
                 </figure>
             </div>
             <div class="col-lg-6 offset-lg-1 reveal">

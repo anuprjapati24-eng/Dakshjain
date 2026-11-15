@@ -5,6 +5,7 @@ defined('SITE_ROOT') || exit;
  * Expects $entries; optional $entry_label (default link text) and
  * $entry_heading (heading element, default 'h3').
  * Only fields present on a record are shown; see the files in content/.
+ * An optional 'image' (a .jpg under assets/images/) is shown above the record.
  */
 $entry_label   = $entry_label   ?? 'View';
 $entry_heading = $entry_heading ?? 'h3';
@@ -21,6 +22,9 @@ $entry_heading = $entry_heading ?? 'h3';
         }
         ?>
         <li class="entry-list__item" data-category="<?= e($entry['category'] ?? '') ?>">
+            <?php if (!empty($entry['image']) && preg_match('#^assets/images/[a-z0-9/_-]+\.jpg$#', $entry['image'])): ?>
+                <img class="entry-list__image" src="<?= e($entry['image']) ?>" loading="lazy" alt="<?= e($entry['image_alt'] ?? $entry['title']) ?>">
+            <?php endif; ?>
             <p class="entry-list__meta">
                 <?php if (!empty($entry['category'])): ?><span class="entry-list__category"><?= e($entry['category']) ?></span><?php endif; ?>
                 <?php foreach ($entry_meta as $meta_part): ?><span><?= e($meta_part) ?></span><?php endforeach; ?>
