@@ -5,7 +5,8 @@ defined('SITE_ROOT') || exit;
  * Expects $entries; optional $entry_label (default link text) and
  * $entry_heading (heading element, default 'h3').
  * Only fields present on a record are shown; see the files in content/.
- * An optional 'image' (a .jpg under assets/images/) is shown above the record. */
+ * An optional 'image' (a .jpg under assets/images/) is shown above the record.
+ */
 $entry_label   = $entry_label   ?? 'View';
 $entry_heading = $entry_heading ?? 'h3';
 ?>
