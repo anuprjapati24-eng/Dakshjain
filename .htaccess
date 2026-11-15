@@ -1,0 +1,32 @@
+# Apache / LiteSpeed settings for the site. Other servers need equivalent rules.
+
+Options -Indexes
+DirectoryIndex index.php
+
+# Not for visitors: PHP partials, content data, original photographs, documentation, dotfiles.
+RedirectMatch 403 (^|/)(includes|content)(/|$)
+RedirectMatch 403 (^|/)assets/images/daksh-real-images(/|$)
+RedirectMatch 403 (^|/)README\.md$
+RedirectMatch 403 (^|/)\.(?!well-known/)
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^robots\.txt$ robots.php [L]
+    RewriteRule ^sitemap\.xml$ sitemap.php [L]
+</IfModule>
+
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+    ExpiresByType text/css "access plus 1 week"
+    ExpiresByType application/javascript "access plus 1 week"
+    ExpiresByType text/javascript "access plus 1 week"
+</IfModule>
