@@ -50,7 +50,8 @@ $speech_layout = $speech_layout ?? 'cards';
         </div>
     </article>
 <?php else: ?>
-    <ul class="speech-grid">
+    <?php // With one or two cards, a wider horizontal card fills the row instead of leaving empty columns. ?>
+    <ul class="speech-grid<?= count($speech_entries) <= 2 ? ' speech-grid--count-' . count($speech_entries) : '' ?>">
         <?php foreach ($speech_entries as $speech): ?>
             <?php
             [$speech_url, $speech_external, $speech_thumb] = entry_media($speech);

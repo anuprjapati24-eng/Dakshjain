@@ -1858,6 +1858,59 @@ a.speech-cover:hover .speech-cover__play,
     }
 }
 
+/* One or two cards: lay each card out horizontally so the row is filled */
+@media (min-width: 768px) {
+    .speech-grid--count-1 {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .speech-grid--count-1 .speech-card {
+        flex-direction: row;
+    }
+
+    .speech-grid--count-1 .speech-cover {
+        flex: 0 0 clamp(15rem, 34%, 21rem);
+    }
+
+    .speech-grid--count-1 .speech-card__body {
+        justify-content: center;
+        padding: clamp(1.75rem, 1rem + 2.5vw, 3rem);
+    }
+
+    .speech-grid--count-1 .speech-card__title {
+        font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+        line-height: 1.25;
+    }
+
+    .speech-grid--count-1 .speech-card__summary {
+        display: block;
+        max-width: 38rem;
+        font-size: 1rem;
+    }
+
+    .speech-grid--count-1 .speech-card .link-arrow {
+        margin-top: 0.5rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .speech-grid--count-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .speech-grid--count-2 .speech-card {
+        flex-direction: row;
+    }
+
+    .speech-grid--count-2 .speech-cover {
+        flex: 0 0 42%;
+    }
+
+    .speech-grid--count-2 .speech-card__body {
+        justify-content: center;
+    }
+}
+
 /* Category overview: compact numbered rows */
 .speech-topics {
     display: grid;
